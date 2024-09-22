@@ -19,8 +19,6 @@ class OddsSpider(scrapy.Spider):
 
         leagues_urls = [f"{response.url}{league.split('/')[3]}-2023-2024/results/#/page/1/" for league in leagues_url_paths]
 
-        pages = response.xpath('//a[@class="pagination-link"]/text()').getall()
-
         return leagues_urls[0:5]
 
     def parse_leagues(self, response):
