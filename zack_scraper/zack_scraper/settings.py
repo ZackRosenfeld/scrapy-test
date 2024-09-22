@@ -7,7 +7,7 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-from tmplayer.utils import get_random_agent
+#from tmplayer.utils import get_random_agent
 
 
 BOT_NAME = "zack_scraper"
@@ -21,8 +21,8 @@ NEWSPIDER_MODULE = "zack_scraper.spiders"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-USER_AGENT = get_random_agent()
-#USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
+#USER_AGENT = get_random_agent()
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -36,6 +36,8 @@ USER_AGENT = get_random_agent()
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 SPLASH_URL = 'http://localhost:8050'
+
+#DOWNLOAD_DELAY = 2  # 2 seconds between requests
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashCookiesMiddleware': 723,
@@ -112,3 +114,4 @@ HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
